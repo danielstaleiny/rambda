@@ -51,3 +51,5 @@ const sortFn2 = (a, b) => b - a;
 console.log(R.sort(sortFn, [3, 1, 2]));
 
 console.log(R.sort(sortFn2, [3, 1, 2]));
+
+console.log(R.values({ a: 1, b: 2 })); // => [1, 2]
