@@ -29,3 +29,25 @@ const result2 = R.compose(R.map(x => x * 2), R.filter(x => x > 2))([
   5
 ]);
 console.log(result2);
+
+console.log(R.contains(2, [1, 2])); // => true
+console.log(R.contains(3, [1, 2])); // => false
+
+const addFourNumbers = (a, b, c, d) => a + b + c + d;
+const curriedAddFourNumbers = R.curry(addFourNumbers);
+const f = curriedAddFourNumbers(1, 2);
+const g = f(3);
+console.log(g(4)); // => 10
+
+console.log(R.path("a.b", { a: { b: 1 } })); // => 1
+console.log(R.path(["a", "b"], { a: { b: 2 } })); // => 2
+console.log(R.path(["a", "c"], { a: { b: 2 } })); // => undefined
+
+R.pluck("a")([{ a: 1 }, { a: 2 }, { b: 3 }]); // => [1, 2]
+
+const sortFn = (a, b) => a - b;
+const sortFn2 = (a, b) => b - a;
+
+console.log(R.sort(sortFn, [3, 1, 2]));
+
+console.log(R.sort(sortFn2, [3, 1, 2]));

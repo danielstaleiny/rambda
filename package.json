@@ -10,5 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "rambda": "^0.9.3"
-  }
+  },
+    "prettier": {
+    }
 }
